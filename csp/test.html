@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://cdn.bootcss.com/;  form-action  'self'; report-uri /report">
     <title>Document</title>
 </head>
 <body>
     <h1>我失败了</h1>
-    <form method="post" action="https://baidu.com">
+    <form action="http://baidu.com">
         <input type="submit" value="11">
     </form>
-
+    <img src="https://gss3.bdstatic.com/-Po3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268%3Bg%3D0/sign=d6d431bf9aef76c6d0d2fc2da52d9ac7/2f738bd4b31c8701928251782d7f9e2f0708ff7c.jpg" alt="">
 
     <script src="https://cdn.bootcss.com/jquery/3.3.1/core.js"></script>
     <script src="test.js"></script>
