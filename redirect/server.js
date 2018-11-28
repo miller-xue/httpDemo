@@ -5,22 +5,20 @@ http.createServer(function (request, response) {
     console.log('request come', request.url)
     if(request.url === '/'){
         // 302的语义是临时跳转 
-        response.writeHead(302, {
-            'Location': '/new'
-        })
-
-        // 301  是永久跳转 不需要浏览器访问后台在进行跳转 浏览器会缓存重定向的页面很久，除非用户手动清除
         response.writeHead(301, {
             'Location': '/new'
         })
 
+        // 301  是永久跳转 不需要浏览器访问后台在进行跳转 浏览器会缓存重定向的页面很久，除非用户手动清除
+        /*response.writeHead(301, {
+            'Location': '/new'
+        })*/
+
 
         // 不会跳转
-        response.writeHead(200, {
+        /*response.writeHead(200, {
             'Location': '/new'
-        })
-
-
+        })*/
         response.end('');
     }
 

@@ -18,14 +18,14 @@
         enctype="multipart/form-data"
         多部分
     -->
-    application/x-www-form-urlencoded
+    <h6> application/x-www-form-urlencoded </h6>
     <form action="/form" method="post" enctype="application/x-www-form-urlencoded">
         <input type="text" name="name">
         <input type="password" name="password">
         <input type="submit">
     </form>
     <br>
-    enctype="multipart/form-data"
+    <h6> enctype="multipart/form-data"</h6>
     <form action="/form" id="form" method="post" enctype="multipart/form-data">
         <input type="text" name="name">
         <input type="password" name="password">
@@ -34,6 +34,7 @@
     </form>
 </body>
 <script> 
+    //  直接post带文件看不到请求信息，使用ajax请求替代
     var form = document.getElementById('form');
     form.addEventListener('submit',function(e){
         e.preventDefault();

@@ -9,13 +9,15 @@ http.createServer(function (request, response) {
         const html = fs.readFileSync('test.html','utf8')
         response.writeHead(200,{
             'Content-type': 'text/html', // 返回类型
-            //'Content-Security-Policy': 'default-src http: https:' // 只能通过引入的方式引入js 不能内部写js脚本 加载就报错
-            //'Content-Security-Policy': 'default-src \'self\' https://cdn.bootcss.com/;  form-action  \'self\'; report-uri /report' //指定引入具体的域名
-            // default-src 是规定全局规定所有
-            // script-src img-src 可限制一个or默认所有
+            'Content-Security-Policy': 'script-src \'self\' https://cdn.bootcss.com/; form-action  \'self\'; report-uri /report'
+
+            /*'Content-Security-Policy': 'default-src http: https:' // 只能通过引入的方式引入js 不能内部写js脚本 加载就报错
+            'Content-Security-Policy': 'default-src \'self\' https://cdn.bootcss.com/;  form-action  \'self\'; report-uri /report' //指定引入具体的域名
+            default-src 是规定全局规定所有
+            script-src img-src 可限制一个or默认所有
            
-           // 'Content-Security-Policy-Report-Only': 'default-src \'self\' https://cdn.bootcss.com/;  form-action  \'self\'; report-uri /report'
-            // connect-src 限制ajax请求的地址
+           'Content-Security-Policy-Report-Only': 'default-src \'self\' https://cdn.bootcss.com/;  form-action  \'self\'; report-uri /report'
+            connect-src 限制ajax请求的地址 */
         })
         // 2.返回给前台
         response.end(html)
